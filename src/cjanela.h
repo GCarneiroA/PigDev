@@ -36,7 +36,7 @@ public:
     void SetBorda(int valor);
     void SetModo(int valor);
     int GetModo();
-    int SetTamanho(int alt, int larg);
+    void SetTamanho(int alt, int larg);
     void DesenhaRetangulo(int x, int y, int alturaRet, int larguraRet, PIG_Cor cor);
     void DesenhaRetanguloVazado(int x, int y, int alturaRet, int larguraRet, PIG_Cor cor);
     void DesenhaLinhaSimples(int x1,int y1,int x2,int y2,PIG_Cor cor);

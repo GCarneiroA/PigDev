@@ -5,6 +5,8 @@
 #include "cjanela.h"
 #include "ctimer.h"
 
+#include <libavcodec/codec.h>
+
 double CVideo::get_video_clock() {
   double delta = (av_gettime() - is->video_current_pts_time) / 1000000.0;
   return is->video_current_pts + delta;
@@ -32,7 +34,7 @@ int CVideo::DecodeThread(void* pUserData){
             }
 
             if(av_seek_frame(is->pFormatCtx, stream_index, seek_target, is->seek_flags) < 0) {
-                fprintf(stderr, "%s: error while seeking\n", is->pFormatCtx->filename);
+                fprintf(stderr, "%s: error while seeking\n", is->pFormatCtx->url);
             }else{
                 //printf("fui pro else\n");
                 if(is->audioStream >= 0){
@@ -185,8 +187,11 @@ int CVideo::VideoThread(void *pUserData){
             break;
 
         if (player->filaVideo->IgualFlushData(is->videoPkt.data)) {
-            if (is->videoSt->internal)
-            avcodec_flush_buffers(is->videoSt->codec);
+            if (is->videoSt->internal) {
+                AVCodec *pCodec = avcodec_find_decoder(is->videoSt->codecpar->codec_id);
+                avcodec_flush_buffers(avcodec_alloc_context3(pCodec));
+            }
+
             continue;
         }
 
@@ -198,7 +203,7 @@ int CVideo::VideoThread(void *pUserData){
                 break;
 
             if (is->videoPkt.dts != AV_NOPTS_VALUE){
-                pts = (double)av_frame_get_best_effort_timestamp(pFrame);
+                pts = pFrame->best_effort_timestamp;
             }else{
                 pts = 0;
             }
@@ -416,7 +421,8 @@ int CVideo::DecodeAudioFrame(double *ptsPtr){
         }
 
         if (filaAudio->IgualFlushData(is->audioPkt.data)) {
-            avcodec_flush_buffers(is->audioSt->codec);
+            AVCodec *pCodec = avcodec_find_decoder(is->audioSt->codecpar->codec_id);
+            avcodec_flush_buffers(avcodec_alloc_context3(pCodec));
             continue;
         }
 
@@ -712,15 +718,18 @@ int CVideo::CriaVideoState(){
     return 0;
 }
 
-void CVideo::DestroiStream(AVStream *stream){
+void CVideo::DestroiStream(AVStream *stream)
+{
     //printf("flushei1\n");
-    if (stream->codec->internal)
-        avcodec_flush_buffers(stream->codec);
+    AVCodec *pCodec = avcodec_find_decoder(stream->codecpar->codec_id);
+    AVCodecContext *pContext = avcodec_alloc_context3(pCodec);
+    if (pContext->internal)
+        avcodec_flush_buffers(avcodec_alloc_context3(pCodec));
 
     //printf("fecha stream\n");
-    if (stream->codec){
-        avcodec_close(stream->codec);
-        stream->codec = NULL;
+    if (pCodec) {
+        avcodec_close(pContext);
+        stream->codecpar = nullptr;
     }
 }
 

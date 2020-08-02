@@ -169,7 +169,7 @@ CPigDropDown::~CPigDropDown()
 
         if(marcado)lista->Desenha();
         DesenhaLabel();
-
+        return 0;
     }
 
     void CPigDropDown::SetPosItensLista(PIG_PosicaoComponente pos){

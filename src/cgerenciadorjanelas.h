@@ -20,7 +20,7 @@ public:
     static void EscondeJanela(int idJanela);
     static void ExibeJanela(int idJanela);
     static void GanhaFocoJanela(int idJanela);
-    inline static CJanela *GetJanela(int idJanela);
+    static CJanela *GetJanela(int idJanela);
     static void IniciaDesenho(int idJanela=-1);
     static void EncerraDesenho(int idJanela=-1);
     static void DefineFundo(std::string nomeArquivo,int idJanela=0);
@@ -28,7 +28,7 @@ public:
     static void SaveScreenshotPNG(std::string nomeArquivo,int idJanela=0);
     static int GetAltura(int idJanela=0);
     static int GetLargura(int idJanela=0);
-    static int SetTamanho(int altura,int largura,int idJanela=0);
+    static void SetTamanho(int altura,int largura,int idJanela=0);
     static std::string GetTitulo(int idJanela=0);
     static void SetTitulo(std::string novoTitulo,int idJanela=0);
     static PIG_Cor GetCorFundo(int idJanela=0);

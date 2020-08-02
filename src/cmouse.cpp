@@ -43,8 +43,10 @@ int CMouse::estadoBotaoCentral;
         y = my;
     }
 
-    int CMouse::ProcessaEvento(PIG_Evento evento){
-        if (evento.tipoEvento!=EVENTO_MOUSE) return 0;
+    void CMouse::ProcessaEvento(PIG_Evento evento){
+        if (evento.tipoEvento!=EVENTO_MOUSE) {
+            return;
+        }
         if (evento.mouse.acao==MOUSE_PRESSIONADO||evento.mouse.acao==MOUSE_LIBERADO){
             switch(evento.mouse.botao){
             case MOUSE_DIREITO: estadoBotaoDireito = evento.mouse.acao;break;
@@ -54,6 +56,7 @@ int CMouse::estadoBotaoCentral;
         }else if (evento.mouse.acao==MOUSE_MOVIDO){
             Move(evento.mouse.posX,evento.mouse.posY,evento.mouse.numeroJanela);
         }
+
     }
 
     void CMouse::MudaCursor(int indice){

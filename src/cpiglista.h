@@ -19,7 +19,7 @@ public:
     static CPigLista LeArquivoParametros(std::string nomeArqParam);
     int Desenha() override;
     int TrataEvento(PIG_Evento evento);
-    int CriaItem(std::string texto,std::string imagem = "",int largImg = 0,int retiraFundoImg = 1);
+    void CriaItem(std::string texto,std::string imagem = "",int largImg = 0,int retiraFundoImg = 1);
     int GetPosItemMarcado();
     void SetRetanguloMarcacao(bool status);
     void SetFonteItensLista(int fonte);

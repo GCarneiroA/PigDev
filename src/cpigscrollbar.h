@@ -37,7 +37,7 @@ private:
     static int AcaoSetas(int idBotao, void* pontObjeto);
     void AjustaOrientacao();
     void AjustaHandle();
-    int AvancaHandle(int novoValor,int delta = 0);
+    void AvancaHandle(int novoValor,int delta = 0);
     void TrataClickTrilha(int px,int py);
     int TrataBotoes(PIG_Evento evento);
     int TrataRodinha(PIG_Evento evento);

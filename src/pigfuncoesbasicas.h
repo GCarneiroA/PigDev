@@ -25,7 +25,7 @@ std::vector<std::string> PIGSeparaPalavras(std::string texto,std::string delim);
 bool PIGSomenteNumeros(std::string frase);
 
 //verifica se duas cores s�o iguais
-inline bool PIGCoresIguais(PIG_Cor cor1, PIG_Cor cor2);
+bool PIGCoresIguais(PIG_Cor cor1, PIG_Cor cor2);
 
 //cria uma cor a partir de uma string com um valor hexadecimal de 8 algarismos RRGGBBAA. Ex: 0xFF0000FF (vermelho)
 PIG_Cor PIGCriaCor(char *stringHexa);

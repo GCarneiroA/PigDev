@@ -56,6 +56,7 @@ CPigCaixaTexto::~CPigCaixaTexto(){
         }else if (evento.tipoEvento==EVENTO_TECLADO){
             return TrataEventoTeclado(evento);
         }
+        return 0;
     }
 
     //define a cor do cursor
@@ -102,6 +103,7 @@ CPigCaixaTexto::~CPigCaixaTexto(){
             else if (evento.mouse.botao == MOUSE_DIREITO)
                 return TrataMouseBotaoDireito(evento,p);
         }
+        return 0;
     }
 
     //verifica se o evento ocorre dentro da �rea do componente

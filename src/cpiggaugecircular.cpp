@@ -214,6 +214,8 @@ int CPigGaugeCircular::Desenha()
 
     DesenhaLabel();
     EscreveHint();
+
+    return 0;
 }
 
 void CPigGaugeCircular::DefineEstado(PIG_EstadoComponente estadoComponente)

@@ -92,7 +92,7 @@
         return 0;
     }
 
-    int CPigLista::CriaItem(std::string texto,std::string imagem,int largImg,int retiraFundoImg)
+    void CPigLista::CriaItem(std::string texto,std::string imagem,int largImg,int retiraFundoImg)
     {
 
         int posX = x;

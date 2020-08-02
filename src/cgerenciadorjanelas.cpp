@@ -98,7 +98,7 @@ CJanela *CGerenciadorJanelas::janelas[MAX_JANELAS];
     return GetJanela(idJanela)->GetLargura();
 }
 
- int CGerenciadorJanelas::SetTamanho(int altura,int largura,int idJanela){
+ void CGerenciadorJanelas::SetTamanho(int altura,int largura,int idJanela){ 
     GetJanela(idJanela)->SetTamanho(altura,largura);
 }
 

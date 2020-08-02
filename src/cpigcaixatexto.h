@@ -83,8 +83,8 @@ public:
     void Move(int nx, int ny);
 
 private:
-    int OnMouseOn(){}
-    int OnMouseOff(){}
+    int OnMouseOn(){ return 0; }
+    int OnMouseOff(){ return 0; }
     bool cursorExibido;
     int maxCaracteres;
     bool somenteNumeros;

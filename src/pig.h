@@ -2568,7 +2568,7 @@ de posi��o e �ngulo informado at� o momento. Al�m disso, se o v�deo 
 Par�metro:
 idVideo (entrada, passagem por valor): identificador do v�deo a ser desenhado.
 ********************************/
-int DesenhaVideo(int idVideo);
+void DesenhaVideo(int idVideo);
 
 /********************************
 A fun��o SetVolumeVideo() � respons�vel por definir o volume para o v�deo. O valor informado deve ser positivo ou zero (mudo).

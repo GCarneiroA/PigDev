@@ -17,7 +17,7 @@ public:
     static int GetEstadoBotaoCentral();
     static int GetEstadoBotaoEsquerdo();
     static void PegaXY(int &x, int &y);
-    static int ProcessaEvento(PIG_Evento evento);
+    static void ProcessaEvento(PIG_Evento evento);
     static void MudaCursor(int indice);
     static void Desenha(int idJanela=0);
     static void Move(int x,int y, int idJanela=0);

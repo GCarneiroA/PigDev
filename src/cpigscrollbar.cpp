@@ -16,6 +16,7 @@
         }else if (idBotao==scroll->id+2){
             scroll->AvancaHandle(scroll->vAtual,scroll->deltaBotao);
         }
+        return 0;
     }
 
 /***************Novos M�todos**************/
@@ -63,7 +64,7 @@
     }
 
     //Recebe um valor e move o handle de forma proporcional
-    int CPigScrollBar::AvancaHandle(int novoValor,int delta){
+    void CPigScrollBar::AvancaHandle(int novoValor,int delta){
         if(!orientacaoCrescimento) delta = -delta;
         vAtual = PIGLimitaValor(novoValor + delta,vMin,vMax);
         porcentagemConcluida = (1.0 * (vAtual - vMin))/(vMax - vMin);
@@ -228,7 +229,8 @@
         return CPigScrollBar(idComponente,px,py,larguraTotal,comprimentoTotal,larguraHandle,imgHandle,imgTrilha,retiraFundoHandle,retiraFundoTrilha,janela);
     }
 
-    void CPigScrollBar::SetBotoes(int alturaBotoes,std::string imgBotao1,std::string imgBotao2,int retiraFundoB1,int retiraFundoB2){
+    void CPigScrollBar::SetBotoes(int alturaBotoes,std::string imgBotao1,std::string imgBotao2,int retiraFundoB1,int retiraFundoB2)
+    {
         if (botao1==NULL){
             botao1 = new CPigBotao(id + 1,xOriginal,yOriginal,alturaBotoes,largura,imgBotao1,retiraFundoB1,idJanela);
             botao2 = new CPigBotao(id + 2,xOriginal,yOriginal,alturaBotoes,largura,imgBotao2,retiraFundoB2,idJanela);

@@ -11,7 +11,7 @@
 
 struct SDL_Point;
 
-class CPigAreaDeTexto: public CPigCaixaTexto
+class CPigAreaDeTexto : public CPigCaixaTexto
 {
 public:
     CPigAreaDeTexto(int idComponente,int px, int py, int altura,int largura,std::string nomeArq,int maxCars = 200,int retiraFundo=1,int janela=0);
@@ -71,7 +71,7 @@ private:
     void DesenhaLinhasHorizontais();
     int SobeCursor();
     int DesceCursor();
-    int PulaLinha();
+    int PulaLinha() override;;
 };
 
 #endif

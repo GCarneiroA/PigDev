@@ -50,7 +50,7 @@ int CFilaPacotes::Put(AVPacket *srcPkt)
     AVPacket pkt;
     int rv;
 
-    if (srcPkt != &flushPkt && av_dup_packet(srcPkt) < 0) {
+    if (av_packet_ref(&flushPkt, srcPkt) < 0) {
         return -1;
     }
 
@@ -127,7 +127,7 @@ void CFilaPacotes::Flush()
     SDL_LockMutex(cs);
     for(pkt = first; pkt != NULL; pkt = pkt1) {
         pkt1 = pkt->next;
-        av_free_packet(&pkt->pkt);
+        av_packet_unref(&pkt->pkt);
         av_freep(&pkt);
     }
     last = NULL;

@@ -11,15 +11,16 @@ CPigForm::CPigForm(int idForm, int xForm, int yForm, int altForm, int largForm)
     larg = largForm;
 }
 
-CPigForm::~CPigForm(){
+CPigForm::~CPigForm()
+{
 }
 
 int CPigForm::TrataEvento(PIG_Evento evento)
 {
-
+    return 0;
 }
 
 int CPigForm::Desenha()
 {
-
+    return 0;
 }

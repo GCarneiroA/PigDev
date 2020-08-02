@@ -168,7 +168,7 @@ int CJanela::GetModo(){
     return modo;
 }
 
-int CJanela::SetTamanho(int alt, int larg){
+void CJanela::SetTamanho(int alt, int larg){
     altura = alt;
     largura = larg;
     SDL_SetWindowSize(window,larg,alt);

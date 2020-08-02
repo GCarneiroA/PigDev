@@ -76,10 +76,12 @@ CPigItemCheck::~CPigItemCheck(){
         return 0;
     }
 
-    int CPigItemCheck::Desenha(){
+    int CPigItemCheck::Desenha()
+    {
         SDL_RenderCopyEx(renderer,text,&frame,&dest,-angulo,NULL,flip);
         DesenhaLabel();
         EscreveHint();
+        return 0;
     }
 
     void CPigItemCheck::AlinhaDireita(int largTotal){

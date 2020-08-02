@@ -8,8 +8,6 @@ CPoolNumeros *CGerenciadorVideos::numVideos;
 CVideo *CGerenciadorVideos::videos[MAX_VIDEOS];
 
 void CGerenciadorVideos::Inicia(){
-    av_register_all();
-    avcodec_register_all();
     avdevice_register_all();
     avformat_network_init();
 
@@ -61,7 +59,7 @@ void CGerenciadorVideos::Resume(int idVideo){
     videos[idVideo]->Resume();
 }
 
-int CGerenciadorVideos::Desenha(int idVideo){
+void CGerenciadorVideos::Desenha(int idVideo){
     videos[idVideo]->Desenha();
 }
 

@@ -1077,7 +1077,7 @@ void ResumeVideo(int idVideo){
     CGerenciadorVideos::Resume(idVideo);
 }
 
-int DesenhaVideo(int idVideo){
+void DesenhaVideo(int idVideo){
     CGerenciadorVideos::Desenha(idVideo);
 }
 

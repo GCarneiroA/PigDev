@@ -186,6 +186,7 @@ CPigAreaDeTexto::~CPigAreaDeTexto(){
         CPigCaixaTexto::TrataEvento(evento);
         if(scrollVerticalAtivado) TrataScrollBarVertical(evento);
         if(scrollHorizontalAtivado) TrataScrollBarHorizontal(evento);
+        return 0;
     }
 
     //define o espa�amento entre as linhas
@@ -197,6 +198,7 @@ CPigAreaDeTexto::~CPigAreaDeTexto(){
     {
         CPigCaixaTexto::SetTexto(frase);
         AjustaAlinhamento();
+        return 0;
     }
 
     void CPigAreaDeTexto::SetMargens(int horEsq,int horDir, int vertBaixo,int vertCima){
@@ -343,6 +345,7 @@ CPigAreaDeTexto::~CPigAreaDeTexto(){
         int linha = GetLinhaComMouseEmCima();
         //printf("pos %d linha %d\n",posInicial,linha);
         TrataMouseBotaoEsquerdoESobeDesceCursor(p,posInicial,linha);
+        return 0;
     }
 
     //Trata evento botao esquerdo e sobe e desce o cursor pelas setas
@@ -461,7 +464,8 @@ CPigAreaDeTexto::~CPigAreaDeTexto(){
     }
 
     //PulaLinha com Enter
-    int CPigAreaDeTexto::PulaLinha(){
+    int CPigAreaDeTexto::PulaLinha()
+    {
         std::string aux = "";
         std::string auxB = "";
 
@@ -473,5 +477,6 @@ CPigAreaDeTexto::~CPigAreaDeTexto(){
 
         texto = auxB;
         AvancaCursor();
-
+        
+        return 0;
     }
