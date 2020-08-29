@@ -35,7 +35,7 @@ bool PIGSomenteNumeros(std::string frase){
 }
 
 //verifica se duas cores s�o iguais
-inline bool PIGCoresIguais(PIG_Cor cor1, PIG_Cor cor2){
+bool PIGCoresIguais(PIG_Cor cor1, PIG_Cor cor2){
     return cor1.r==cor2.r&&cor1.g==cor2.g&&cor1.b==cor2.b&&cor1.a==cor2.a;
 }
 

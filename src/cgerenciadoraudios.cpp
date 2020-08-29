@@ -173,3 +173,24 @@ void CGerenciadorAudios::Inicia()
             audios[i]->Resume();
     }
 }
+
+void CGerenciadorAudios::TrataParadaAudio(int canal)
+{
+    SDL_Event eventoAudio;
+    eventoAudio.type = SDL_USEREVENT;
+    eventoAudio.user.code = EVENTO_AUDIO;
+    eventoAudio.user.data1 = (int*)malloc(sizeof(int));
+    *((int*)eventoAudio.user.data1) = audioIds[canal];
+    SDL_PushEvent(&eventoAudio);
+    audioIds[canal] = -1;
+}
+
+void CGerenciadorAudios::TrataParadaBackground()
+{
+    SDL_Event eventoAudio;
+    eventoAudio.type = SDL_USEREVENT;
+    eventoAudio.user.code = EVENTO_AUDIO;
+    eventoAudio.user.data1 = (int*)malloc(sizeof(int));
+    *((int*)eventoAudio.user.data1) = ID_BACKGROUND;
+    SDL_PushEvent(&eventoAudio);
+}

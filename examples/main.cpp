@@ -1,36 +1,39 @@
-#include "PIG.h"
 
-PIG_Evento evento;          //evento ser tratadoi a cada pssada do loop principal
-PIG_Teclado meuTeclado;     //variável como mapeamento do teclado
+#include <pig.h>
 
-int main( int argc, char* args[] ){
+//PIG_Evento evento;          //evento ser tratadoi a cada pssada do loop principal
+//PIG_Teclado meuTeclado;     //variï¿½vel como mapeamento do teclado
 
-    //criando o jogo (aplicação)
+int main( int argc, char* args[] )
+{
+    CriaJogo("Meu Jogo");
+    /*
+    //criando o jogo (aplicaï¿½ï¿½o)
     CriaJogo("Meu Jogo");
 
-    //associando o teclado (basta uma única vez) com a variável meuTeclado
+    //associando o teclado (basta uma ï¿½nica vez) com a variï¿½vel meuTeclado
     meuTeclado = GetTeclado();
 
     //loop principal do jogo
     while(JogoRodando()){
 
-        //pega um evento que tenha ocorrido desde a última passada do loop
+        //pega um evento que tenha ocorrido desde a ï¿½ltima passada do loop
         evento = GetEvento();
 
         //aqui o evento deve ser tratado e as coisas devem ser atualizadas
 
-        //será feita aprepação do frame que será exibido na tela
+        //serï¿½ feita aprepaï¿½ï¿½o do frame que serï¿½ exibido na tela
         IniciaDesenho();
 
         //todas as chamadas de desenho devem ser feitas aqui na ordem desejada
 
-        //o frame totalmente pronto será mostrado na tela
+        //o frame totalmente pronto serï¿½ mostrado na tela
         EncerraDesenho();
     }
 
-    //o jogo será encerrado
+    //o jogo serï¿½ encerrado
     FinalizaJogo();
+    */
 
     return 0;
 }
-

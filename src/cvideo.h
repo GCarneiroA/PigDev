@@ -14,15 +14,18 @@
     extern "C"{
 #endif
 */
-#include <libavfilter/avfilter.h>
-#include <libavformat/avformat.h>
-#include <libavcodec/avcodec.h>
-#include <libavdevice/avdevice.h>
-#include <libavutil/imgutils.h>
-#include <libavutil/avstring.h>
-#include <libavutil/time.h>
-#include <libswresample/swresample.h>
-#include <libswscale/swscale.h>
+extern "C" {
+    #include <libavfilter/avfilter.h>
+    #include <libavformat/avformat.h>
+    #include <libavcodec/avcodec.h>
+    #include <libavdevice/avdevice.h>
+    #include <libavutil/imgutils.h>
+    #include <libavutil/avstring.h>
+    #include <libavutil/time.h>
+
+    #include <libswresample/swresample.h>
+    #include <libswscale/swscale.h>
+}
 
 #include <SDL2/SDL_image.h>
 #include "cjanela.h"

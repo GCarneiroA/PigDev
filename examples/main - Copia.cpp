@@ -1,3 +1,5 @@
+
+/*
 #include "PIG.h"
 #include "CPigComponente.h"
 #include "CPigBotao.h"
@@ -27,9 +29,10 @@ int Habilita(int id, void *param){
         bot->DefineEstado(COMPONENTE_DESABILITADO);
     }
 }
-
-int main( int argc, char* args[] ){
-
+*/
+int main( int argc, char* args[] )
+{
+    /*
     CriaJogo("Meu Jogo");
 
     meuTeclado = GetTeclado();
@@ -42,7 +45,7 @@ int main( int argc, char* args[] ){
     bot->DefineTexto("OK");
     bot->DefineSom(audio);
     bot->DefineAtalho(TECLA_k);
-    bot->DefineHint("Botão que faz alguma coisa");
+    bot->DefineHint("Botï¿½o que faz alguma coisa");
     bot->DefineFonteHint(fonte);
     bot->DefineEstado(COMPONENTE_DESABILITADO);
     bot->DefineAcao(Funcao,NULL);
@@ -51,7 +54,7 @@ int main( int argc, char* args[] ){
     bot2->DefineTexto("Habilita");
     bot2->DefineSom(audio);
     bot2->DefineAtalho(TECLA_h);
-    bot2->DefineHint("Botão que habilita o outro");
+    bot2->DefineHint("Botï¿½o que habilita o outro");
     bot2->DefineFonteHint(fonte);
     //bot2->DefineEstado(COMPONENTE_DESABILITADO);
     bot2->DefineAcao(Habilita,bot);
@@ -66,11 +69,11 @@ int main( int argc, char* args[] ){
 
     //SDL_Rect r = {400,300,40,120};
     //SDL_SetTextInputRect(&r);
-    printf("%d %c\n",(uint8_t)'ó','ó');
-    printf("%d %c\n",(uint8_t)'é','é');
-    printf("%d %c\n",(uint8_t)'í','í');
-    printf("%d %c\n",(uint8_t)'ª','ª');
-    printf("%d %c\n",(uint8_t)'º','º');
+    printf("%d %c\n",(uint8_t)'ï¿½','ï¿½');
+    printf("%d %c\n",(uint8_t)'ï¿½','ï¿½');
+    printf("%d %c\n",(uint8_t)'ï¿½','ï¿½');
+    printf("%d %c\n",(uint8_t)'ï¿½','ï¿½');
+    printf("%d %c\n",(uint8_t)'ï¿½','ï¿½');
 
     int mx,my;
 
@@ -109,5 +112,6 @@ int main( int argc, char* args[] ){
     }
 
     FinalizaJogo();
+    */
     return 0;
 }

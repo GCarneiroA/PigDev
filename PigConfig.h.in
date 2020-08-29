@@ -1,0 +1,5 @@
+
+
+#define Pig_VERSION_MAJOR       @PigDev_VERSION_MAJOR@
+#define Pig_VERSION_MINOR       @PigDev_VERSION_MINOR@
+#define Pig_VERSION_PATCH       @PigDev_VERSION_PATCH@

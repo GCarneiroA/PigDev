@@ -5,8 +5,10 @@
 #include <cstdint>
 #include <SDL2/SDL.h>
 
-#include <libavcodec/avcodec.h>
-#include <libavformat/avformat.h>
+extern "C" {
+    #include <libavcodec/avcodec.h>
+    #include <libavformat/avformat.h>
+}
 
 class CFilaPacotes
 {

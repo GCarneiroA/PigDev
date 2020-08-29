@@ -3,8 +3,10 @@
 
 #include <SDL2/SDL_mutex.h>
 
-#include <libavcodec/avcodec.h>
-#include <libavformat/avformat.h>
+extern "C" {
+    #include <libavcodec/avcodec.h>
+    #include <libavformat/avformat.h>
+}
 
 CFilaPacotes::CFilaPacotes()
 {
